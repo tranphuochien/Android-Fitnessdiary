@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "509093531109",
+    "project_id": "firebase-fitnessdiary"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509093531109:android:01c830dfbbb143a6",
+        "android_client_info": {
+          "package_name": "com.example.op.fitnessdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509093531109-50b5gdln50q35339up2p3ju8osgmc0oi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.op.fitnessdiary",
+            "certificate_hash": "E52CC900DDD338F0DD23BE27FAD711044F1B6489"
+          }
+        },
+        {
+          "client_id": "509093531109-4lba4l744cjokvrsk5iliimkff7nvumf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS4218Wj132WgpS6NJjZGqzKeNpT7T8pM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
