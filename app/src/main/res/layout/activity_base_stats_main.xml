@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_base_stats_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.op.fitnessdiary.baseStats.baseStats_main">
+
+    <TextView
+        android:text="Your Age:"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"
+        android:id="@+id/BaseStats_ageTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:text="Your Gender"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BaseStats_ageTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/BaseStats_genderTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:text="Your Height"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:id="@+id/BaseStats_heightTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_below="@+id/BaseStats_genderTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_genderText"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_alignBaseline="@+id/BaseStats_genderTitle"
+        android:layout_alignBottom="@+id/BaseStats_genderTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_ageText"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_width="220dp"
+        android:layout_alignBaseline="@+id/BaseStats_ageTitle"
+        android:layout_alignBottom="@+id/BaseStats_ageTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Your Weight"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BaseStats_heightTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"
+        android:id="@+id/BaseStats_weightTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="366"
+        android:ems="10"
+        android:id="@+id/BaseStats_weightText"
+        android:layout_alignBaseline="@+id/BaseStats_weightTitle"
+        android:layout_alignBottom="@+id/BaseStats_weightTitle"
+        android:layout_alignLeft="@+id/BaseStats_genderText"
+        android:layout_alignStart="@+id/BaseStats_genderText" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="59"
+        android:ems="10"
+        android:id="@+id/BaseStats_heightText"
+        android:layout_width="150dp"
+        android:layout_alignBaseline="@+id/BaseStats_heightTitle"
+        android:layout_alignBottom="@+id/BaseStats_heightTitle"
+        android:layout_alignLeft="@+id/BaseStats_weightText"
+        android:layout_alignStart="@+id/BaseStats_weightText" />
+
+    <TextView
+        android:text="For today:"
+        android:layout_below="@+id/BaseStats_weightText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp"
+        android:id="@+id/BaseStats_remindTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Calo In:"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/BaseStats_incomeCalo"
+        android:layout_below="@+id/BaseStats_remindTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:text="Calo Out:"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_outcomeCalo"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/BaseStats_incomeCalo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:text="Water In:"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_water"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/BaseStats_outcomeCalo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/BaseStats_remindTitle"
+        android:layout_alignEnd="@+id/BaseStats_remindTitle"
+        android:id="@+id/BaseStats_saveBtn" />
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="47dp"
+        android:layout_marginEnd="47dp"
+        android:id="@+id/BaseStats_backBtn" />
+
+    <TextView
+        android:text="436"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/BaseStats_water"
+        android:layout_alignRight="@+id/BaseStats_outcomeCaloText"
+        android:layout_alignEnd="@+id/BaseStats_outcomeCaloText"
+        android:id="@+id/BaseStats_waterText"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:text="365"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_incomeCaloText"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_width="150dp"
+        android:layout_alignBaseline="@+id/BaseStats_incomeCalo"
+        android:layout_alignBottom="@+id/BaseStats_incomeCalo"
+        android:layout_alignLeft="@+id/BaseStats_weightText"
+        android:layout_alignStart="@+id/BaseStats_weightText" />
+
+    <TextView
+        android:text="345"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_outcomeCaloText"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_alignBaseline="@+id/BaseStats_outcomeCalo"
+        android:layout_alignBottom="@+id/BaseStats_outcomeCalo"
+        android:layout_alignLeft="@+id/BaseStats_incomeCaloText"
+        android:layout_alignStart="@+id/BaseStats_incomeCaloText" />
+
+    <TextView
+        android:text="littre"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/BaseStats_waterUnit"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:layout_alignBaseline="@+id/BaseStats_waterText"
+        android:layout_alignBottom="@+id/BaseStats_waterText"
+        android:layout_alignRight="@+id/BaseStats_waterText"
+        android:layout_alignEnd="@+id/BaseStats_waterText" />
+
+</RelativeLayout>
