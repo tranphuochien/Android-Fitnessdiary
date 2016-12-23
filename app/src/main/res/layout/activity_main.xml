@@ -4,4 +4,15 @@
     android:layout_height="match_parent">
 
 
+    <Button
+        android:text="Sign in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/button_signin" />
 </RelativeLayout>
