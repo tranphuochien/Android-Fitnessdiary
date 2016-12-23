@@ -39,7 +39,7 @@ public class SignInActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         // Views
         mStatusTextView = (TextView) findViewById(R.id.status);
@@ -135,7 +135,7 @@ public class SignInActivity extends AppCompatActivity implements
     // [END signIn]
 
     // [START signOut]
-    private void signOut() {
+    public void signOut() {
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
                 new ResultCallback<Status>() {
                     @Override
@@ -188,7 +188,9 @@ public class SignInActivity extends AppCompatActivity implements
     private void updateUI(boolean signedIn) {
         if (signedIn) {
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+            Intent myIntent=new Intent(SignInActivity.this, MainActivity.class);
+            startActivity(myIntent);
         } else {
             mStatusTextView.setText(R.string.signed_out);
 
