@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="You are the strongest man"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="203dp"
+        android:id="@+id/textView_slogan"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/activity_vertical_margin"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:text="I proud of myself!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_celcebrate_status"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_celebrate_status"
+        android:layout_alignBottom="@+id/editText_celebrate_status"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/textView_celcebrate_status"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_alignTop="@+id/editText_celebrate_status"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText_celebrate_status"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView_celebrate_status" />
+
+    <Button
+        android:text="Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_celebate_returnhome"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_alignBaseline="@+id/button_celebrate_share"
+        android:layout_alignBottom="@+id/button_celebrate_share"
+        android:layout_toRightOf="@+id/button_celebrate_share"
+        android:layout_toEndOf="@+id/button_celebrate_share"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="Share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_celebrate_share"
+        android:layout_marginBottom="31dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_above="@+id/textView_celebrate_status"
+        android:layout_alignLeft="@+id/textView_slogan"
+        android:layout_alignStart="@+id/textView_slogan"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textColorLink="@android:color/holo_green_dark" />
+</RelativeLayout>

@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MainLogin.MainLogin" />
         <activity android:name=".MainLogin.ForgotPassword" />
-        <activity android:name=".MainLogin.CreateAccount"></activity>
+        <activity android:name=".MainLogin.CreateAccount" />
+        <activity android:name=".Celebrate.Celebrate_main"></activity>
     </application>
 
 </manifest>
