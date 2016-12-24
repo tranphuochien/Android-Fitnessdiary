@@ -28,4 +28,25 @@
         android:layout_marginEnd="71dp"
         android:id="@+id/test_intent_to_baseStats"
         android:onClick="onClickBaseStats" />
+
+    <Button
+        android:text="Album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test_intent_to_setting"
+        android:layout_alignLeft="@+id/test_intent_to_setting"
+        android:layout_alignStart="@+id/test_intent_to_setting"
+        android:layout_marginTop="54dp"
+        android:id="@+id/test_intent_to_album"
+        android:onClick="onClickAlbum" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/test_intent_to_album"
+        android:layout_alignLeft="@+id/test_intent_to_baseStats"
+        android:layout_alignStart="@+id/test_intent_to_baseStats"
+        android:id="@+id/test_intent_to_event"
+        android:onClick="onClickEvent" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.op.fitnessdiary.baseStats;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.op.fitnessdiary.MainActivity;
 import com.example.op.fitnessdiary.R;
 
 public class baseStats_main extends AppCompatActivity {
@@ -33,20 +35,20 @@ public class baseStats_main extends AppCompatActivity {
         this.caloOut = (TextView) this.findViewById(R.id.BaseStats_outcomeCaloText);
         this.water = (TextView) this.findViewById(R.id.BaseStats_waterText);
 
-        this.saveBtn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
+        this.saveBtn.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
                 // xu ly tam
                 Toast.makeText(baseStats_main.this, "ban da luu thong tin thanh cong", Toast.LENGTH_SHORT).show();
-
 
                 // xu ly save o day
             }
         });
+    }
 
-        this.backBtn.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                // xu ly back o day
-            }
-        });
+    public void onClickBack(View v) {
+        Intent myIntent = new Intent(this, MainActivity.class);
+        this.startActivity(myIntent);
+        finish();
+        // xu ly back o day
     }
 }

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.op.fitnessdiary">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".setting.Account_setting_main_fix" />
-        <activity android:name=".baseStats.baseStats_main"></activity>
+        <activity android:name=".baseStats.baseStats_main" />
+        <activity android:name=".album.Album_main" />
+        <activity android:name=".createEvent.CreateEvent_main"></activity>
     </application>
 
 </manifest>

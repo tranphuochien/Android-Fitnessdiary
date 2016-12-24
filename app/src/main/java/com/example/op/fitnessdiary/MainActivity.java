@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.op.fitnessdiary.album.Album_main;
 import com.example.op.fitnessdiary.baseStats.baseStats_main;
+import com.example.op.fitnessdiary.createEvent.CreateEvent_main;
 import com.example.op.fitnessdiary.setting.Account_setting_main_fix;
 
 
@@ -31,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBaseStats(View v){
         Intent myIntent = new Intent(this, baseStats_main.class);
+        this.startActivity(myIntent);
+    }
+
+    public void onClickAlbum(View v){
+        Intent myIntent = new Intent(this, Album_main.class);
+        this.startActivity(myIntent);
+    }
+
+    public void onClickEvent(View v){
+        Intent myIntent = new Intent(this, CreateEvent_main.class);
         this.startActivity(myIntent);
     }
 }
