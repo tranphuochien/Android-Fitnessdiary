@@ -19,7 +19,11 @@
         <activity android:name=".MainLogin.MainLogin" />
         <activity android:name=".MainLogin.ForgotPassword" />
         <activity android:name=".MainLogin.CreateAccount" />
-        <activity android:name=".Celebrate.Celebrate_main"></activity>
+        <activity android:name=".Celebrate.Celebrate_main" />
+        <activity android:name=".Plan.Plan_main" />
+        <activity android:name=".Plan.Plan_CreatePlan" />
+        <activity android:name=".Plan.Plan_ProcessDetail" />
+        <activity android:name=".Plan.Plan_ListExercise"></activity>
     </application>
 
 </manifest>
