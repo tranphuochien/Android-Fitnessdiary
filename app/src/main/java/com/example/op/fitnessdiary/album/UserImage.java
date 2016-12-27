@@ -1,6 +1,7 @@
 package com.example.op.fitnessdiary.album;
 
 import java.io.Serializable;
+import java.io.StringReader;
 
 /**
  * Created by theriddle on 12/24/16.
@@ -9,10 +10,12 @@ import java.io.Serializable;
 public class UserImage implements Serializable{
     private String imageName;
     private String imageInfo;
+    private String imagePath;
 
-    public UserImage(String imageName, String imageInfo){
+    public UserImage(String imageName, String imageInfo, String imagePath){
         this.imageInfo = imageInfo;
         this.imageName = imageName;
+        this.imagePath = imagePath;
     }
 
     public String getImageName(){
@@ -23,6 +26,8 @@ public class UserImage implements Serializable{
         return this.imageInfo;
     }
 
+    public String getImagePath() { return this.imagePath; }
+
     public void setImageName(String imageName){
         this.imageName = imageName;
     }
@@ -30,5 +35,7 @@ public class UserImage implements Serializable{
     public void setImageInfo(String imageInfo){
         this.imageInfo = imageInfo;
     }
+
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 
 }

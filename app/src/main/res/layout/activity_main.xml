@@ -5,19 +5,6 @@
 
 
     <Button
-        android:text="Setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="58dp"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="44dp"
-        android:id="@+id/test_intent_to_setting"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClickSetting" />
-
-    <Button
         android:text="BaseStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,18 +17,7 @@
         android:onClick="onClickBaseStats" />
 
     <Button
-        android:text="Album"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/test_intent_to_setting"
-        android:layout_alignLeft="@+id/test_intent_to_setting"
-        android:layout_alignStart="@+id/test_intent_to_setting"
-        android:layout_marginTop="54dp"
-        android:id="@+id/test_intent_to_album"
-        android:onClick="onClickAlbum" />
-
-    <Button
-        android:text="Button"
+        android:text="Event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/test_intent_to_album"
@@ -49,4 +25,28 @@
         android:layout_alignStart="@+id/test_intent_to_baseStats"
         android:id="@+id/test_intent_to_event"
         android:onClick="onClickEvent" />
+
+    <Button
+        android:text="Setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_intent_to_setting"
+        android:onClick="onClickSetting"
+        android:layout_marginBottom="19dp"
+        android:layout_above="@+id/test_intent_to_event"
+        android:layout_toLeftOf="@+id/test_intent_to_baseStats"
+        android:layout_toStartOf="@+id/test_intent_to_baseStats"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp" />
+
+    <Button
+        android:text="Album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_intent_to_album"
+        android:onClick="onClickAlbum"
+        android:layout_marginBottom="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/test_intent_to_setting"
+        android:layout_alignStart="@+id/test_intent_to_setting" />
 </RelativeLayout>
