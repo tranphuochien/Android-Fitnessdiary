@@ -23,7 +23,8 @@
         <activity android:name=".Plan.Plan_main" />
         <activity android:name=".Plan.Plan_CreatePlan" />
         <activity android:name=".Plan.Plan_ProcessDetail" />
-        <activity android:name=".Plan.Plan_ListExercise"></activity>
+        <activity android:name=".Plan.Plan_ListExercise" />
+        <activity android:name=".Plan.Plan_listitem_detailday"></activity>
     </application>
 
 </manifest>

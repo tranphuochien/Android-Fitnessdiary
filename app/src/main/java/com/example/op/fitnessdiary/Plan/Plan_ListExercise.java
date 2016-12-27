@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.op.fitnessdiary.ListExercise.Dancing;
 import com.example.op.fitnessdiary.ListExercise.Exercise;
 import com.example.op.fitnessdiary.ListExercise.ListExercise;
 import com.example.op.fitnessdiary.R;
@@ -20,7 +19,7 @@ public class Plan_ListExercise extends AppCompatActivity {
 
         ArrayList<Exercise> list = this.getListExcercise();
         final ListView listView = (ListView) findViewById(R.id.listview_plan);
-        listView.setAdapter(new CustomListAdapter(this, list));
+        listView.setAdapter(new CustomListExerciseAdapter(this, list));
 
     }
 

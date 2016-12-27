@@ -19,12 +19,12 @@ import java.util.ArrayList;
  * Created by OP on 12/25/2016.
  */
 
-public class CustomListAdapter extends BaseAdapter{
+public class CustomListExerciseAdapter extends BaseAdapter{
     private ArrayList<Exercise> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public CustomListAdapter(Context aContext,  ArrayList<Exercise> listData) {
+    public CustomListExerciseAdapter(Context aContext, ArrayList<Exercise> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
