@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_plan_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.op.fitnessdiary.Plan.Plan_main">
+
+    <Button
+        android:text="Create plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_plan_createplan"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/button_plan_processdetail"
+        android:layout_toStartOf="@+id/button_plan_processdetail"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView_plan_today"
+        android:layout_alignLeft="@+id/textView_plan_today"
+        android:layout_alignStart="@+id/textView_plan_today"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView_plan_today"
+        android:layout_below="@+id/button_plan_processdetail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:text="Process detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_plan_processdetail"
+        android:layout_marginRight="29dp"
+        android:layout_marginEnd="29dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_alignBaseline="@+id/button_plan_createplan"
+        android:layout_alignBottom="@+id/button_plan_createplan"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
