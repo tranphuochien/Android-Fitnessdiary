@@ -138,7 +138,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Sign up"
+        android:text="Create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
@@ -155,5 +155,14 @@
         android:layout_alignBottom="@+id/editText_signup_username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Test insert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_createAccount"
+        android:layout_toRightOf="@+id/textView_signup_dob"
+        android:layout_toEndOf="@+id/textView_signup_dob"
+        android:id="@+id/button_test_insert" />
 
 </RelativeLayout>

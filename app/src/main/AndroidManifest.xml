@@ -22,7 +22,7 @@
         <activity android:name=".setting.Account_setting_main_fix" />
         <activity android:name=".baseStats.baseStats_main" />
         <activity android:name=".album.Album_main" />
-        <activity android:name=".createEvent.CreateEvent_main"></activity>
+        <activity android:name=".createEvent.CreateEvent_main" />
         <activity android:name=".MainLogin.MainLogin" />
         <activity android:name=".MainLogin.ForgotPassword" />
         <activity android:name=".MainLogin.CreateAccount" />
@@ -31,7 +31,8 @@
         <activity android:name=".Plan.Plan_CreatePlan" />
         <activity android:name=".Plan.Plan_ProcessDetail" />
         <activity android:name=".Plan.Plan_ListExercise" />
-        <activity android:name=".Plan.Plan_listitem_detailday"></activity>
+        <activity android:name=".Plan.Plan_listitem_detailday" />
+        <activity android:name=".MainLogin.MainLogin_LoginSuccess"></activity>
     </application>
 
 </manifest>
