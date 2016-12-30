@@ -8,12 +8,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.op.fitnessdiary.Celebrate.Celebrate_main">
+    tools:context=".GUI.Celebrate.Celebrate_main">
 
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:name="com.example.op.fitnessdiary.Celebrate.Celebrate_header"
+        android:name="com.example.op.fitnessdiary.GUI.Celebrate.Celebrate_header"
         android:id="@+id/fragment"
         tools:layout="@layout/activity_celebration_header"
         android:layout_marginBottom="319dp"
@@ -24,7 +24,7 @@
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:name="com.example.op.fitnessdiary.Celebrate.Celebrate_footer"
+        android:name="com.example.op.fitnessdiary.GUI.Celebrate.Celebrate_footer"
         android:id="@+id/fragment2"
         tools:layout="@layout/acitivity_celebrate_footer"
         android:layout_alignParentBottom="true"

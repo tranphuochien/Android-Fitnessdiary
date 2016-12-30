@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.op.fitnessdiary.setting.Account_setting_main_fix">
+    tools:context=".GUI.setting.Account_setting_main_fix">
 
     <ScrollView
         android:layout_width="match_parent"

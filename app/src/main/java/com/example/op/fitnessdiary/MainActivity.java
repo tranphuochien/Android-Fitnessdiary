@@ -1,20 +1,18 @@
 package com.example.op.fitnessdiary;
 
-import android.widget.Button;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.op.fitnessdiary.album.Album_main;
-import com.example.op.fitnessdiary.baseStats.baseStats_main;
-import com.example.op.fitnessdiary.createEvent.CreateEvent_main;
-import com.example.op.fitnessdiary.setting.Account_setting_main_fix;
+import com.example.op.fitnessdiary.GUI.album.Album_main;
+import com.example.op.fitnessdiary.GUI.baseStats.baseStats_main;
+import com.example.op.fitnessdiary.GUI.createEvent.CreateEvent_main;
+import com.example.op.fitnessdiary.GUI.setting.Account_setting_main_fix;
 
-import com.example.op.fitnessdiary.Celebrate.Celebrate_main;
-import com.example.op.fitnessdiary.MainLogin.MainLogin;
-import com.example.op.fitnessdiary.Plan.Plan_main;
+import com.example.op.fitnessdiary.GUI.Celebrate.Celebrate_main;
+import com.example.op.fitnessdiary.GUI.MainLogin.MainLogin;
+import com.example.op.fitnessdiary.GUI.Plan.Plan_main;
 
 
 public class MainActivity extends AppCompatActivity {

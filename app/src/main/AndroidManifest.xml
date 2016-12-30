@@ -19,20 +19,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".setting.Account_setting_main_fix" />
-        <activity android:name=".baseStats.baseStats_main" />
-        <activity android:name=".album.Album_main" />
-        <activity android:name=".createEvent.CreateEvent_main" />
-        <activity android:name=".MainLogin.MainLogin" />
-        <activity android:name=".MainLogin.ForgotPassword" />
-        <activity android:name=".MainLogin.CreateAccount" />
-        <activity android:name=".Celebrate.Celebrate_main" />
-        <activity android:name=".Plan.Plan_main" />
-        <activity android:name=".Plan.Plan_CreatePlan" />
-        <activity android:name=".Plan.Plan_ProcessDetail" />
-        <activity android:name=".Plan.Plan_ListExercise" />
-        <activity android:name=".Plan.Plan_listitem_detailday" />
-        <activity android:name=".MainLogin.MainLogin_LoginSuccess"></activity>
+        <activity android:name=".GUI.setting.Account_setting_main_fix" />
+        <activity android:name=".GUI.baseStats.baseStats_main" />
+        <activity android:name=".GUI.album.Album_main" />
+        <activity android:name=".GUI.createEvent.CreateEvent_main" />
+        <activity android:name=".GUI.MainLogin.MainLogin" />
+        <activity android:name=".GUI.MainLogin.ForgotPassword" />
+        <activity android:name=".GUI.MainLogin.CreateAccount" />
+        <activity android:name=".GUI.Celebrate.Celebrate_main" />
+        <activity android:name=".GUI.Plan.Plan_main" />
+        <activity android:name=".GUI.Plan.Plan_CreatePlan" />
+        <activity android:name=".GUI.Plan.Plan_ProcessDetail" />
+        <activity android:name=".GUI.Plan.Plan_ListExercise" />
+        <activity android:name=".GUI.Plan.Plan_listitem_detailday" />
+        <activity android:name=".GUI.MainLogin.MainLogin_LoginSuccess"></activity>
     </application>
 
 </manifest>

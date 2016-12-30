@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.op.fitnessdiary.MainLogin.MainLogin">
+    tools:context=".GUI.MainLogin.MainLogin">
 
     <ImageView
         android:layout_width="360px"
