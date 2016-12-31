@@ -18,7 +18,7 @@ public class Dancing extends Exercise implements Endurance {
 
     @Override
     public String GetName() {
-        return "dancing";
+        return "DANCING";
     }
 
     @Override

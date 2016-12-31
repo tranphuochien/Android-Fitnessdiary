@@ -20,7 +20,7 @@ public class Lifting extends  Exercise implements Strength {
 
     @Override
     public String GetName() {
-        return "lifting";
+        return "LIFTING";
     }
 
     @Override
@@ -28,23 +28,19 @@ public class Lifting extends  Exercise implements Strength {
         return NormalizeName(strTypeName) == GetName();
     }
 
-    @Override
-    public int getTimes() {
+    public int getSections() {
         return times;
     }
 
-    @Override
-    public void setTimes(int t) {
+    public void setSections(int t) {
         times = t;
     }
 
-    @Override
-    public int getnHitOnTime() {
+    public int getTimes() {
         return nHitOnTime;
     }
 
-    @Override
-    public void setnHitOnTime(int t) {
+    public void setTimes(int t) {
         nHitOnTime = t;
     }
 

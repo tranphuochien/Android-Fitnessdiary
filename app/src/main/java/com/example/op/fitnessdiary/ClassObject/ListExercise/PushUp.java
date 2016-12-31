@@ -5,8 +5,8 @@ package com.example.op.fitnessdiary.ClassObject.ListExercise;
  */
 
 public class PushUp extends Exercise implements Strength {
-    private  int times;
-    private int nHitOnTime;
+    private  int sections;
+    private int times;
 
     public PushUp()
     {
@@ -20,7 +20,7 @@ public class PushUp extends Exercise implements Strength {
 
     @Override
     public String GetName() {
-        return "pushup";
+        return "PUSHUP";
     }
 
     @Override
@@ -28,23 +28,19 @@ public class PushUp extends Exercise implements Strength {
         return NormalizeName(strTypeName) == GetName();
     }
 
-    @Override
+    public int getSections() {
+        return sections;
+    }
+
+    public void setSections(int t) {
+        sections = t;
+    }
+
     public int getTimes() {
         return times;
     }
 
-    @Override
     public void setTimes(int t) {
         times = t;
-    }
-
-    @Override
-    public int getnHitOnTime() {
-        return nHitOnTime;
-    }
-
-    @Override
-    public void setnHitOnTime(int t) {
-        nHitOnTime = t;
     }
 }

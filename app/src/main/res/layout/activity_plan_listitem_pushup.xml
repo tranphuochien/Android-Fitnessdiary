@@ -3,17 +3,19 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
     <TextView
         android:layout_width="wrap_content"
-        android:layout_alignTop="@+id/imageView_pushup_avatar"
-        android:layout_toRightOf="@+id/imageView_pushup_avatar"
+        android:layout_alignTop="@+id/imageView_jogging_avatar"
+        android:layout_toRightOf="@+id/imageView_jogging_avatar"
         android:id="@+id/textView_pushup_name"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_height="30dp"
-        android:text="Pushup" />
+        android:text="Pushup"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent" />
 
     <ImageView
         android:layout_width="70dp"
-        android:id="@+id/imageView_pushup_avatar"
+        android:id="@+id/imageView_jogging_avatar"
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -34,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_below="@+id/textView_pushup_duration"
-        android:layout_toRightOf="@+id/imageView_pushup_avatar"
+        android:layout_toRightOf="@+id/imageView_jogging_avatar"
         android:id="@+id/textView_lifting_times"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -47,8 +49,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/textView_pushup_nHitOnTime"
-        android:layout_toRightOf="@+id/imageView_pushup_avatar"
-        android:layout_toEndOf="@+id/imageView_pushup_avatar"
+        android:layout_toRightOf="@+id/imageView_jogging_avatar"
+        android:layout_toEndOf="@+id/imageView_jogging_avatar"
         android:text="c" />
 
 </RelativeLayout>

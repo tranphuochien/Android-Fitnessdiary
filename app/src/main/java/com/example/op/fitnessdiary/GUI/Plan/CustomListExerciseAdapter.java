@@ -7,8 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.example.op.fitnessdiary.ClassObject.ListExercise.Exercise;
+import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.ListVHExercise;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHDancing;
-import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHExcercise;
+import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHExercise;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHJogging;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHLifting;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHPushup;
@@ -49,33 +50,20 @@ public class CustomListExerciseAdapter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         String nameObject = this.listData.get(position).GetName();
         Exercise exercise = this.listData.get(position);
-        VHExcercise holder = null;
+        VHExercise holder = null;
 
-        switch (nameObject) {
-            case "jogging":
-                holder = new VHJogging();
-                break;
+        ListVHExercise listVH = ListVHExercise.getInstance();
+        holder = listVH.ChooseVHExercise(nameObject);
 
-            case "dancing":
-                holder = new VHDancing();
-                break;
-            case "lifting":
-                holder = new VHLifting();
-                break;
-            case "pushup":
-                holder = new VHPushup();
-                break;
-
-        }
         if (holder != null)
         {
             holder.fillObject(exercise);
 
             if (convertView == null) {
-                convertView = holder.findViewById(layoutInflater);
-            } else holder = (VHExcercise) convertView.getTag();
+                convertView = holder.listEx_findViewById(layoutInflater);
+            } else holder = (VHExercise) convertView.getTag();
 
-            holder.setData(this.context);
+            holder.listEx_setData(this.context);
         }
 
         return convertView;

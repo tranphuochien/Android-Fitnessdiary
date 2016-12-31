@@ -207,16 +207,16 @@ public class MainLogin extends AppCompatActivity implements GoogleApiClient.OnCo
 
     private void updateUI(boolean signedIn) {
         if (signedIn) {
-           // findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+           // listEx_findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            //listEx_findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
             //Intent myIntent=new Intent(MainLogin.this, MainLogin_LoginSuccess.class);
             //myIntent.putExtra("EXTRA_INFO_ACCOUNT", mGoogleApiClient);
             //startActivity(myIntent);
         } else {
             Toast.makeText(MainLogin.this,R.string.signed_out, Toast.LENGTH_SHORT).show();
 
-            //findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            //findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+            //listEx_findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+            //listEx_findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
         }
     }
 }

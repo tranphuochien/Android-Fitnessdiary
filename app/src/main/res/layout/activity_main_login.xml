@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="360px"
         android:layout_height="360px"
-        app:srcCompat="@drawable/logo"
+        app:srcCompat="@mipmap/logo2"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="144dp"
         android:layout_marginStart="144dp"

@@ -1,5 +1,7 @@
 package com.example.op.fitnessdiary.ClassObject.ListExercise;
 
+import com.example.op.fitnessdiary.R;
+
 /**
  * Created by OP on 12/24/2016.
  */
@@ -19,7 +21,7 @@ public class Jogging extends Exercise implements Endurance {
 
     @Override
     public String GetName() {
-        return "jogging";
+        return "JOGGING";
     }
 
     @Override

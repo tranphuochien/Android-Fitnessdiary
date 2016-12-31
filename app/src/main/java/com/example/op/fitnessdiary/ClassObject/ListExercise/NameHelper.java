@@ -7,6 +7,6 @@ package com.example.op.fitnessdiary.ClassObject.ListExercise;
 public class NameHelper {
     static String Normalize(String strTypeName)
     {
-        return strTypeName.toLowerCase();
+        return strTypeName.toUpperCase();
     }
 }

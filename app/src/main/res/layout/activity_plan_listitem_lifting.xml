@@ -9,7 +9,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_height="30dp"
-        android:text="lifting" />
+        android:text="lifting"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorAccent" />
 
     <ImageView
         android:layout_width="70dp"
@@ -47,5 +49,7 @@
         android:text="a"
         android:layout_below="@+id/textView_lifting_name"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/imageView_lifting_avatar"
+        android:layout_toEndOf="@+id/imageView_lifting_avatar" />
 </RelativeLayout>

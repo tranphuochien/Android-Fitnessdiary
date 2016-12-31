@@ -1,26 +1,51 @@
 package com.example.op.fitnessdiary.GUI.Plan;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.op.fitnessdiary.ClassObject.ListExercise.Exercise;
 import com.example.op.fitnessdiary.ClassObject.ListExercise.ListExercise;
+import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.ListVHExercise;
+import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHExercise;
+import com.example.op.fitnessdiary.GUI.album.Album_main;
+import com.example.op.fitnessdiary.GUI.album.UserImage;
 import com.example.op.fitnessdiary.R;
 
 import java.util.ArrayList;
 
 public class Plan_ListExercise extends AppCompatActivity {
-
+    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan__list_exercise);
 
+        //Get all type exercises
         ArrayList<Exercise> list = this.getListExcercise();
-        final ListView listView = (ListView) findViewById(R.id.listview_plan);
+
+        //Load listview
+        listView = (ListView) findViewById(R.id.listview_plan);
         listView.setAdapter(new CustomListExerciseAdapter(this, list));
 
+        //Catch event click on a list item
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                Exercise exercise = (Exercise)listView.getItemAtPosition(position);
+                //Toast.makeText(Plan_ListExercise.this, "Selected :" + " " + exercise.GetName(), Toast.LENGTH_SHORT).show();
+                displayAlertDialog(exercise);
+            }
+        });
     }
 
     private ArrayList<Exercise> getListExcercise()
@@ -28,5 +53,48 @@ public class Plan_ListExercise extends AppCompatActivity {
         ListExercise list = new ListExercise();
 
         return list.getListExercise();
+    }
+
+    public void displayAlertDialog(Exercise ex) {
+        LayoutInflater inflater = getLayoutInflater();
+
+        //Choose a holder is corresponding with object ex
+        ListVHExercise listVH = ListVHExercise.getInstance();
+        final VHExercise holder  = listVH.ChooseVHExercise(ex.GetName());
+
+        holder.fillObject(ex);
+        View alertLayout =  holder.setPlan_findViewById(inflater);
+
+        //Set data
+        holder.setPlan_setData(this);
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Set plan");
+        alert.setView(alertLayout);
+        alert.setCancelable(false);
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getBaseContext(), "Cancel clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        alert.setPositiveButton("Set", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // code for matching password
+                Exercise exercise = holder.setPlan_getExercise();
+
+                String duration = String.valueOf(exercise.getDuration());
+                String name =  exercise.GetName();
+
+
+                Toast.makeText(getBaseContext(), "duration: " + duration + " name: " + name, Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog dialog = alert.create();
+        dialog.show();
     }
 }

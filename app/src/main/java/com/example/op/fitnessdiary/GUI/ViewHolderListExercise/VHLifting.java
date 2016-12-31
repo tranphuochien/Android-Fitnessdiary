@@ -13,7 +13,7 @@ import com.example.op.fitnessdiary.R;
 /**
  * Created by OP on 12/25/2016.
  */
-public class VHLifting extends VHExcercise {
+public class VHLifting extends VHExercise {
     TextView nTimes;
     TextView nHitOnTime;
     Lifting lifting = new Lifting();
@@ -44,7 +44,7 @@ public class VHLifting extends VHExcercise {
     }
 
     @Override
-    public View findViewById(LayoutInflater layoutInflater) {
+    public View listEx_findViewById(LayoutInflater layoutInflater) {
         View convertView;
         convertView = layoutInflater.inflate(R.layout.activity_plan_listitem_lifting, null);
 
@@ -52,23 +52,56 @@ public class VHLifting extends VHExcercise {
         this.setName( (TextView) convertView.findViewById(R.id.textView_lifting_name));
         this.setnTimes((TextView) convertView.findViewById(R.id.textView_lifting_times));
         this.setnHitOnTime((TextView) convertView.findViewById(R.id.textView_lifting_nHitOnTime));
-        this.setDuration((TextView) convertView.findViewById(R.id.textView_lifting_duration));
+        this.setTextViewDuration((TextView) convertView.findViewById(R.id.textView_lifting_duration));
         convertView.setTag(this);
 
         return convertView;
     }
 
     @Override
-    public void setData(Context context) {
+    public void listEx_setData(Context context) {
         int imageId = this.getMipmapResIdByName(this.lifting.getAvatar(), context);
         this.getAvatar().setImageResource(imageId);
 
         this.getName().setText(this.lifting.GetName());
         String tmp = String.valueOf(this.lifting.getDuration());
-        this.getDuration().setText(tmp);
+        this.getTextViewDuration().setText("Duration: " +tmp);
+        tmp = String.valueOf(this.lifting.getSections());
+        this.getnTimes().setText("Times: " +tmp);
         tmp = String.valueOf(this.lifting.getTimes());
-        this.getnTimes().setText(tmp);
-        tmp = String.valueOf(this.lifting.getnHitOnTime());
-        this.getnHitOnTime().setText(tmp);
+        this.getnHitOnTime().setText("Num hits/time: " + tmp);
     }
+
+    @Override
+    public View setPlan_findViewById(LayoutInflater layoutInflater) {
+        return null;
+    }
+
+
+    @Override
+    public void setPlan_setData(Context context) {
+
+    }
+
+    @Override
+    public Exercise setPlan_getExercise() {
+        return null;
+    }
+
+
+    @Override
+    public String GetName() {
+        return "LIFTING";
+    }
+
+    public Boolean isOkByName(String strTypeName) {
+        return NormalizeName(strTypeName) == GetName();
+    }
+
+    @Override
+    public VHExercise Clone() {
+        VHExercise obj = new VHLifting();
+        return  obj;
+    }
+
 }

@@ -3,6 +3,7 @@ package com.example.op.fitnessdiary.GUI.ViewHolderListExercise;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,61 +14,124 @@ import com.example.op.fitnessdiary.R;
 /**
  * Created by OP on 12/25/2016.
  */
-public class VHPushup extends VHExcercise {
-    TextView nTimes;
-    TextView nHitOnTime;
+public class VHPushup extends VHExercise {
+    TextView sections;
+    TextView times;
+    EditText editTextSections;
+    EditText editTextTimes;
     PushUp pushUp= new PushUp();
-    public TextView getnTimes()
+
+    //Method: get
+    public TextView getSections()
     {
-        return nTimes;
+        return sections;
     }
 
-    public TextView getnHitOnTime()
+    public TextView getTimes()
     {
-        return nHitOnTime;
+        return times;
     }
 
-    public void setnTimes(TextView t)
+    public EditText getEditTextSections() { return editTextSections;}
+
+    public EditText getEditTextTimes() { return  editTextTimes;}
+
+    //Method: set
+    public void setSections(TextView t)
     {
-        nTimes = t;
+        sections = t;
     }
 
-    public void setnHitOnTime(TextView t)
+    public void setTimes(TextView t)
     {
-        nHitOnTime = t;
+        times = t;
     }
 
+    public void setEditTextSections(EditText e) {this.editTextSections = e;}
+
+    public void setEditTextTimes(EditText e) { this.editTextTimes = e;}
     @Override
     public void fillObject(Exercise ex) {
         pushUp = (PushUp) ex;
     }
 
     @Override
-    public View findViewById(LayoutInflater layoutInflater) {
+    public View listEx_findViewById(LayoutInflater layoutInflater) {
         View convertView;
         convertView = layoutInflater.inflate(R.layout.activity_plan_listitem_pushup, null);
 
-        this.setAvatar((ImageView) convertView.findViewById(R.id.imageView_pushup_avatar));
+        this.setAvatar((ImageView) convertView.findViewById(R.id.imageView_jogging_avatar));
         this.setName( (TextView) convertView.findViewById(R.id.textView_pushup_name));
-        this.setnTimes((TextView) convertView.findViewById(R.id.textView_lifting_times));
-        this.setnHitOnTime((TextView) convertView.findViewById(R.id.textView_pushup_nHitOnTime));
-        this.setDuration((TextView) convertView.findViewById(R.id.textView_pushup_duration));
+        this.setSections((TextView) convertView.findViewById(R.id.textView_lifting_times));
+        this.setTimes((TextView) convertView.findViewById(R.id.textView_pushup_nHitOnTime));
+        this.setTextViewDuration((TextView) convertView.findViewById(R.id.textView_pushup_duration));
         convertView.setTag(this);
 
         return convertView;
     }
 
     @Override
-    public void setData(Context context) {
+    public void listEx_setData(Context context) {
         int imageId = this.getMipmapResIdByName(this.pushUp.getAvatar(), context);
         this.getAvatar().setImageResource(imageId);
 
         this.getName().setText(this.pushUp.GetName());
         String tmp = String.valueOf(this.pushUp.getDuration());
-        this.getDuration().setText(tmp);
+        this.getTextViewDuration().setText("Duration: " + tmp);
+        tmp = String.valueOf(this.pushUp.getSections());
+        this.getSections().setText("Times: " + tmp);
         tmp = String.valueOf(this.pushUp.getTimes());
-        this.getnTimes().setText(tmp);
-        tmp = String.valueOf(this.pushUp.getnHitOnTime());
-        this.getnHitOnTime().setText(tmp);
+        this.getTimes().setText("Num hits/time: " +tmp);
     }
+
+
+    //Method: to set plan a exercise
+    @Override
+    public View setPlan_findViewById(LayoutInflater layoutInflater) {
+        View alertLayout = layoutInflater.inflate(R.layout.plan_edit_pushup, null);
+        this.name = (TextView) alertLayout.findViewById(R.id.textView_pushup_name);
+        this.editTextDurarion = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_pushup_duration);
+        this.editTextSections = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_pushup_sections);
+        this.editTextTimes = (EditText)alertLayout.findViewById(R.id.editText_plan_edit_pushup_times);
+        this.avatar = (ImageView) alertLayout.findViewById(R.id.imageView_pushup_avatar);
+        return alertLayout;
+    }
+
+    @Override
+    public void setPlan_setData(Context context) {
+        //Set avatar
+        int imageId = this.getMipmapResIdByName(this.pushUp.getAvatar(), context);
+        this.getAvatar().setImageResource(imageId);
+
+        //Set name
+        this.name.setText(pushUp.GetName().toString());
+    }
+
+
+    @Override
+    public Exercise setPlan_getExercise()
+    {
+        pushUp.setDuration(Integer.valueOf(editTextDurarion.getText().toString()));
+        pushUp.setSections(Integer.valueOf(editTextSections.getText().toString()));
+        pushUp.setTimes(Integer.valueOf(editTextTimes.getText().toString()));
+        return pushUp;
+    }
+
+    //Method: prototype pattern
+    @Override
+    public String GetName() {
+        return "PUSHUP";
+    }
+
+    public Boolean isOkByName(String strTypeName) {
+        return NormalizeName(strTypeName) == GetName();
+    }
+
+    @Override
+    public VHExercise Clone() {
+        VHExercise obj = new VHPushup();
+        return  obj;
+    }
+
 }
+
