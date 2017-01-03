@@ -95,8 +95,21 @@ public class VHJogging extends VHExercise {
     @Override
     public Exercise setPlan_getExercise()
     {
-        jogging.setDuration(Integer.valueOf(editTextDurarion.getText().toString()));
-        jogging.setnKilometer(Integer.valueOf(editTextNKms.getText().toString()));
+        int duration;
+        int nKms;
+        try
+        {
+            duration = Integer.valueOf(editTextDurarion.getText().toString());
+            nKms =Integer.valueOf(editTextNKms.getText().toString());
+        }
+        catch (NumberFormatException e)
+        {
+            duration = 10;
+            nKms = 1;
+        }
+
+        jogging.setDuration(duration);
+        jogging.setnKilometer(nKms);
         return jogging;
     }
 

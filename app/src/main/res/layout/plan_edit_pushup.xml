@@ -84,7 +84,7 @@
         android:id="@+id/textView5"
         android:layout_toLeftOf="@+id/editText_plan_edit_pushup_sections"
         android:layout_toStartOf="@+id/editText_plan_edit_pushup_sections"
-        android:layout_alignBottom="@+id/editText_plan_edit_pushup_times"
+        android:layout_alignBottom="@+id/editText_plan_edit_lifting_times"
         android:paddingTop="10dp" />
 
     <EditText
@@ -95,5 +95,5 @@
         android:layout_below="@+id/editText_plan_edit_pushup_sections"
         android:layout_toRightOf="@+id/textView4"
         android:layout_toEndOf="@+id/textView4"
-        android:id="@+id/editText_plan_edit_pushup_times" />
+        android:id="@+id/editText_plan_edit_lifting_times" />
 </RelativeLayout>

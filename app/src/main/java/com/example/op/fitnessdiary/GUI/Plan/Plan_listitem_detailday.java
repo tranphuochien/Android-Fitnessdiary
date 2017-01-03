@@ -15,6 +15,7 @@ public class Plan_listitem_detailday extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_listitem_detailday);
 
+        /*
         buttonChooseEx = (Button) this.findViewById(R.id.button_createplan_chooseExercise);
 
 
@@ -27,6 +28,6 @@ public class Plan_listitem_detailday extends AppCompatActivity {
                 // Yêu cầu chạy Example1Activity.
                 Plan_listitem_detailday.this.startActivity(myIntent);
             }
-        });
+        });*/
     }
 }

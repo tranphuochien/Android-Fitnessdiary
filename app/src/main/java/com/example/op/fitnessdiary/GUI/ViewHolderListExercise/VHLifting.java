@@ -3,6 +3,7 @@ package com.example.op.fitnessdiary.GUI.ViewHolderListExercise;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,28 +15,30 @@ import com.example.op.fitnessdiary.R;
  * Created by OP on 12/25/2016.
  */
 public class VHLifting extends VHExercise {
-    TextView nTimes;
-    TextView nHitOnTime;
+    TextView sections;
+    TextView times;
+    EditText editTextSections;
+    EditText editTextTimes;
     Lifting lifting = new Lifting();
 
-    public TextView getnTimes()
+    public TextView getSections()
     {
-        return nTimes;
+        return sections;
     }
 
-    public TextView getnHitOnTime()
+    public TextView getTimes()
     {
-        return nHitOnTime;
+        return times;
     }
 
-    public void setnTimes(TextView t)
+    public void setSections(TextView t)
     {
-        nTimes = t;
+        sections = t;
     }
 
-    public void setnHitOnTime(TextView t)
+    public void setTimes(TextView t)
     {
-        nHitOnTime = t;
+        times = t;
     }
 
     @Override
@@ -50,8 +53,8 @@ public class VHLifting extends VHExercise {
 
         this.setAvatar((ImageView) convertView.findViewById(R.id.imageView_lifting_avatar));
         this.setName( (TextView) convertView.findViewById(R.id.textView_lifting_name));
-        this.setnTimes((TextView) convertView.findViewById(R.id.textView_lifting_times));
-        this.setnHitOnTime((TextView) convertView.findViewById(R.id.textView_lifting_nHitOnTime));
+        this.setSections((TextView) convertView.findViewById(R.id.textView_lifting_times));
+        this.setTimes((TextView) convertView.findViewById(R.id.textView_lifting_nHitOnTime));
         this.setTextViewDuration((TextView) convertView.findViewById(R.id.textView_lifting_duration));
         convertView.setTag(this);
 
@@ -67,28 +70,58 @@ public class VHLifting extends VHExercise {
         String tmp = String.valueOf(this.lifting.getDuration());
         this.getTextViewDuration().setText("Duration: " +tmp);
         tmp = String.valueOf(this.lifting.getSections());
-        this.getnTimes().setText("Times: " +tmp);
+        this.getSections().setText("Times: " +tmp);
         tmp = String.valueOf(this.lifting.getTimes());
-        this.getnHitOnTime().setText("Num hits/time: " + tmp);
+        this.getTimes().setText("Num hits/time: " + tmp);
     }
 
+    //Method: to set plan a exercise
     @Override
     public View setPlan_findViewById(LayoutInflater layoutInflater) {
-        return null;
+        View alertLayout = layoutInflater.inflate(R.layout.plan_edit_lifting, null);
+        this.name = (TextView) alertLayout.findViewById(R.id.textView_lifting_name);
+        this.editTextDurarion = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_lifting_duration);
+        this.editTextSections = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_lifting_sections);
+        this.editTextTimes = (EditText)alertLayout.findViewById(R.id.editText_plan_edit_lifting_times);
+        this.avatar = (ImageView) alertLayout.findViewById(R.id.imageView_lifting_avatar);
+        return alertLayout;
     }
-
 
     @Override
     public void setPlan_setData(Context context) {
+        //Set avatar
+        int imageId = this.getMipmapResIdByName(this.lifting.getAvatar(), context);
+        this.getAvatar().setImageResource(imageId);
 
+        //Set name
+        this.name.setText(lifting.GetName().toString());
     }
+
 
     @Override
-    public Exercise setPlan_getExercise() {
-        return null;
+    public Exercise setPlan_getExercise()
+    {
+        int duration = 10;
+        int section = 1;
+        int times = 20;
+        try
+        {
+            duration = Integer.valueOf(editTextDurarion.getText().toString());
+            section  = Integer.valueOf(editTextSections.getText().toString());
+            times = Integer.valueOf(editTextTimes.getText().toString());
+        }
+        catch (NumberFormatException e)
+        {}
+
+        lifting.setDuration(duration);
+        lifting.setSections(section);
+        lifting.setTimes(times);
+
+        return lifting;
     }
 
 
+    //Method: prototype pattern
     @Override
     public String GetName() {
         return "LIFTING";

@@ -50,27 +50,19 @@ public class CustomListPlanAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.activity_plan_listitem_detailday, null);
             holder = new ViewHolder();
             holder.idDay = (TextView) convertView.findViewById(R.id.textView_create_plan_idday);
-            holder.buttonChoose = (Button) convertView.findViewById((R.id.button_createplan_chooseExercise));
+            //holder.buttonChoose = (Button) convertView.findViewById((R.id.button_createplan_chooseExercise));
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         DetailDay day = this.listData.get(position);
-        holder.idDay.setText(day.getIdDay());
-        holder.buttonChoose.setOnClickListener(new Button.OnClickListener() {
+        holder.idDay.setText(day.getDate());
 
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(context, Plan_ListExercise.class);
-                // Yêu cầu chạy Example1Activity.
-                context.startActivity(myIntent);
-            }
-        });
         return convertView;
     }
     static class ViewHolder {
         TextView idDay;
-        Button buttonChoose;
+        //Button buttonChoose;
     }
 }

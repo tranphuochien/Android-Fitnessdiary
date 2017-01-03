@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // name of database
     private static final String DATABASE_NAME = "FitnessDiary";
 
+    //----------------------------------------------------------------------------------------------
     // Table : ACCOUNT
     protected static final String TABLE_ACCOUNT = "Account";
 
@@ -32,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
     protected static final String COLUMN_ACCOUNT_RANK = "rank";
     protected static final String COLUMN_ACCOUNT_GENDER = "gender";
     protected static final String COLUMN_ACCOUNT_PASSWORD = "password";
+
     protected static final String CREATE_TABLE_ACCOUNT =  "CREATE TABLE " + TABLE_ACCOUNT + "("
             + COLUMN_ACCOUNT_ID + " TEXT PRIMARY KEY NOT NULL,"
             + COLUMN_ACCOUNT_NICKNAME + " TEXT NOT NULL,"
@@ -41,7 +43,31 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_ACCOUNT_RANK + " INTEGER,"
             + COLUMN_ACCOUNT_GENDER + " TEXT NOT NULL,"
             + COLUMN_ACCOUNT_PASSWORD + " TEXT" + ")";
+    //----------------------------------------------------------------------------------------------
 
+    //----------------------------------------------------------------------------------------------
+    //Table: Plan
+    protected  static final String TABLE_PLAN = "Plan";
+
+    protected  static final String COLUMN_PLAN_ID = "id";
+    protected  static final String COLUMN_PLAN_NUMDAYS = "numdays";
+    protected  static final String COLUMN_PLAN_STATUS = "status";
+
+    protected static final String CREATE_TABLE_PLAN = "CREATE TABLE " + TABLE_PLAN + "("
+            + COLUMN_PLAN_ID + " TEXT PRIMARY KEY NOT NULL,"
+            + COLUMN_PLAN_STATUS + " INTEGER,"
+            + COLUMN_PLAN_NUMDAYS + " INTEGER NOT NULL" + ")";
+    //----------------------------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------------------
+    //Table: DetailPlan
+
+    //----------------------------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------------------
+    //Table:
+
+    //----------------------------------------------------------------------------------------------
 
     protected DBHelper(Context context)  {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -78,6 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
 
     /************************* method work with database *******************/
 

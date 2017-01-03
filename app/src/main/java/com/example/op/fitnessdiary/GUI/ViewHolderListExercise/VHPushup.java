@@ -92,7 +92,7 @@ public class VHPushup extends VHExercise {
         this.name = (TextView) alertLayout.findViewById(R.id.textView_pushup_name);
         this.editTextDurarion = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_pushup_duration);
         this.editTextSections = (EditText) alertLayout.findViewById(R.id.editText_plan_edit_pushup_sections);
-        this.editTextTimes = (EditText)alertLayout.findViewById(R.id.editText_plan_edit_pushup_times);
+        this.editTextTimes = (EditText)alertLayout.findViewById(R.id.editText_plan_edit_lifting_times);
         this.avatar = (ImageView) alertLayout.findViewById(R.id.imageView_pushup_avatar);
         return alertLayout;
     }
@@ -111,9 +111,22 @@ public class VHPushup extends VHExercise {
     @Override
     public Exercise setPlan_getExercise()
     {
-        pushUp.setDuration(Integer.valueOf(editTextDurarion.getText().toString()));
-        pushUp.setSections(Integer.valueOf(editTextSections.getText().toString()));
-        pushUp.setTimes(Integer.valueOf(editTextTimes.getText().toString()));
+        int duration = 10;
+        int section = 1;
+        int times = 20;
+        try
+        {
+            duration = Integer.valueOf(editTextDurarion.getText().toString());
+            section  = Integer.valueOf(editTextSections.getText().toString());
+            times = Integer.valueOf(editTextTimes.getText().toString());
+        }
+        catch (NumberFormatException e)
+        {}
+
+        pushUp.setDuration(duration);
+        pushUp.setSections(section);
+        pushUp.setTimes(times);
+
         return pushUp;
     }
 

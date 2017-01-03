@@ -2,6 +2,7 @@ package com.example.op.fitnessdiary.GUI.Plan;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.op.fitnessdiary.ClassObject.ListExercise.Exercise;
 import com.example.op.fitnessdiary.ClassObject.ListExercise.ListExercise;
+import com.example.op.fitnessdiary.GUI.MainLogin.ForgotPassword;
+import com.example.op.fitnessdiary.GUI.MainLogin.MainLogin;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.ListVHExercise;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHExercise;
 import com.example.op.fitnessdiary.GUI.album.Album_main;
@@ -24,10 +27,14 @@ import java.util.ArrayList;
 
 public class Plan_ListExercise extends AppCompatActivity {
     private ListView listView;
+    private Intent callerIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan__list_exercise);
+
+        //Get intent call this activity
+        callerIntent=getIntent();
 
         //Get all type exercises
         ArrayList<Exercise> list = this.getListExcercise();
@@ -43,7 +50,7 @@ public class Plan_ListExercise extends AppCompatActivity {
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Exercise exercise = (Exercise)listView.getItemAtPosition(position);
                 //Toast.makeText(Plan_ListExercise.this, "Selected :" + " " + exercise.GetName(), Toast.LENGTH_SHORT).show();
-                displayAlertDialog(exercise);
+                displayAlertDialog(exercise, callerIntent);
             }
         });
     }
@@ -55,7 +62,7 @@ public class Plan_ListExercise extends AppCompatActivity {
         return list.getListExercise();
     }
 
-    public void displayAlertDialog(Exercise ex) {
+    public void displayAlertDialog(Exercise ex, final Intent callerIntent) {
         LayoutInflater inflater = getLayoutInflater();
 
         //Choose a holder is corresponding with object ex
@@ -90,8 +97,17 @@ public class Plan_ListExercise extends AppCompatActivity {
                 String duration = String.valueOf(exercise.getDuration());
                 String name =  exercise.GetName();
 
+                /*
+                Intent myIntent = new Intent(Plan_ListExercise.this, Plan_CreatePlan.class);
+                Plan_ListExercise.this.startActivity(myIntent);
+                finish();
+                */
+                Intent intent = new Intent();
+                intent.putExtra("edittextvalue","value_here");
+                setResult(RESULT_OK, intent);
+                finish();
 
-                Toast.makeText(getBaseContext(), "duration: " + duration + " name: " + name, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "duration: " + duration + " name: " + name, Toast.LENGTH_SHORT).show();
             }
         });
         AlertDialog dialog = alert.create();

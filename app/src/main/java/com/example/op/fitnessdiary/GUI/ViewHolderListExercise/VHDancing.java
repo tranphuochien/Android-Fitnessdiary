@@ -72,7 +72,17 @@ public class VHDancing extends VHExercise {
     @Override
     public Exercise setPlan_getExercise()
     {
-        dancing.setDuration(Integer.valueOf(editTextDurarion.getText().toString()));
+        int duration = 10;
+        try
+        {
+            duration = Integer.valueOf(editTextDurarion.getText().toString());
+        }
+        catch (NumberFormatException e)
+        {
+
+        }
+
+        dancing.setDuration(duration);
         return dancing;
     }
 
