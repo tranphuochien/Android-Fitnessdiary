@@ -8,19 +8,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.op.fitnessdiary.ClassObject.ListExercise.Exercise;
 import com.example.op.fitnessdiary.ClassObject.ListExercise.ListExercise;
-import com.example.op.fitnessdiary.GUI.MainLogin.ForgotPassword;
-import com.example.op.fitnessdiary.GUI.MainLogin.MainLogin;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.ListVHExercise;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.VHExercise;
-import com.example.op.fitnessdiary.GUI.album.Album_main;
-import com.example.op.fitnessdiary.GUI.album.UserImage;
 import com.example.op.fitnessdiary.R;
 
 import java.util.ArrayList;

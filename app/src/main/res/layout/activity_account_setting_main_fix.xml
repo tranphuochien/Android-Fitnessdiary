@@ -11,138 +11,130 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".GUI.setting.Account_setting_main_fix">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/account_scroll"
-        android:scrollbarStyle="insideInset"
-        android:clipToPadding="false"
-        android:fillViewport="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:text="Account:"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/Account_title"
+            android:layout_marginTop="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
 
-            <TextView
-                android:text="Account:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_title"
-                android:layout_marginTop="31dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textAppearance="@style/TextAppearance.AppCompat" />
+        <ImageView
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/common_full_open_on_phone"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:id="@+id/Account_image"
+            android:layout_width="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/Account_title"
+            android:layout_toEndOf="@+id/Account_title" />
 
-            <ImageView
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/common_full_open_on_phone"
-                android:layout_marginLeft="18dp"
-                android:layout_marginStart="18dp"
-                android:id="@+id/Account_image"
-                android:layout_width="100dp"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/Account_title"
-                android:layout_toEndOf="@+id/Account_title" />
+        <TextView
+            android:text="AndrejLee"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Account_accountNameText"
+            android:layout_alignBaseline="@+id/Account_title"
+            android:layout_alignBottom="@+id/Account_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
-            <Button
-                android:text="Cancel"
-                android:layout_height="wrap_content"
-                android:id="@+id/Account_cancel"
-                android:layout_alignBaseline="@+id/Account_save"
-                android:layout_alignBottom="@+id/Account_save"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_width="150dp"
-                android:onClick="onClickCancel" />
+        <Button
+            android:text="Save"
+            android:layout_height="wrap_content"
+            android:id="@+id/Account_save"
+            android:layout_width="150dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-            <TextView
-                android:text="AndrejLee"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Account_accountNameText"
-                android:layout_alignBaseline="@+id/Account_title"
-                android:layout_alignBottom="@+id/Account_title"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="11dp"
-                android:layout_marginEnd="11dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        <TextView
+            android:text="Day of Birth:"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/Account_DOBTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_marginTop="27dp"
+            android:layout_below="@+id/Account_image"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-            <TextView
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_DOBText"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_alignBaseline="@+id/Account_DOBTitle"
-                android:layout_alignBottom="@+id/Account_DOBTitle"
-                android:layout_alignLeft="@+id/Account_passwordText"
-                android:layout_alignStart="@+id/Account_passwordText" />
+        <Button
+            android:text="Cancel"
+            android:layout_height="wrap_content"
+            android:id="@+id/Account_cancel"
+            android:layout_width="150dp"
+            android:onClick="onClickCancel"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-            <EditText
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/Account_passwordText"
-                android:layout_width="250dp"
-                android:layout_alignTop="@+id/Account_passwordTitle"
-                android:layout_alignLeft="@+id/Account_userNameText"
-                android:layout_alignStart="@+id/Account_userNameText" />
+        <TextView
+            android:text="Password:"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/Account_passwordTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_below="@+id/Account_DOBTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-            <TextView
-                android:text="Password:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_passwordTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+        <TextView
+            android:text="User Name:"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/Account_userNameTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_below="@+id/Account_passwordTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-            <Button
-                android:text="Save"
-                android:layout_height="wrap_content"
-                android:id="@+id/Account_save"
-                android:layout_width="150dp"
-                android:layout_marginBottom="20dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/Account_passwordText"
+            android:layout_width="250dp"
+            android:layout_alignBottom="@+id/Account_userNameTitle"
+            android:layout_toRightOf="@+id/Account_userNameTitle"
+            android:layout_toEndOf="@+id/Account_userNameTitle"
+            android:layout_below="@+id/Account_passwordTitle" />
 
-            <TextView
-                android:text="Day of Birth:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_DOBTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_below="@+id/Account_passwordTitle"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="36dp" />
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/Account_userNameText"
+            android:layout_width="250dp"
+            android:layout_below="@+id/Account_DOBTitle"
+            android:layout_toRightOf="@+id/Account_DOBTitle"
+            android:layout_toEndOf="@+id/Account_DOBTitle"
+            android:layout_above="@+id/Account_passwordText" />
 
-            <TextView
-                android:text="User Name:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_userNameTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_below="@+id/Account_image"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="24dp" />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:id="@+id/Account_DOBText"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_alignBaseline="@+id/Account_DOBTitle"
+            android:layout_alignBottom="@+id/Account_DOBTitle"
+            android:layout_toRightOf="@+id/Account_DOBTitle"
+            android:layout_toEndOf="@+id/Account_DOBTitle" />
+    </RelativeLayout>
 
-            <EditText
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/Account_userNameText"
-                android:layout_width="250dp"
-                android:layout_alignTop="@+id/Account_userNameTitle"
-                android:layout_alignLeft="@+id/Account_image"
-                android:layout_alignStart="@+id/Account_image" />
-        </RelativeLayout>
-    </ScrollView>
 </RelativeLayout>

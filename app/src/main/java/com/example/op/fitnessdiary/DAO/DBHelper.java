@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // name of database
-    private static final String DATABASE_NAME = "FitnessDiary";
+    private static final String DATABASE_NAME = "FitnessDiarySecond";
 
     //----------------------------------------------------------------------------------------------
     // Table : ACCOUNT
@@ -59,6 +59,39 @@ public class DBHelper extends SQLiteOpenHelper {
             + COLUMN_PLAN_NUMDAYS + " INTEGER NOT NULL" + ")";
     //----------------------------------------------------------------------------------------------
 
+    // ---------------------------------------------------------------------------------------------
+    //Table: Album
+    protected  static final String TABLE_ALBUM = "Album";
+
+    protected static final String COLUMN_ALBUM_ID = "id";
+    protected static final String CREATE_TABLE_ALBUM = "CREATE TABLE " + TABLE_ALBUM + "("
+            + COLUMN_ALBUM_ID + " TEXT PRIMARY KEY NOT NULL,"
+            + ")";
+    //----------------------------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------------------
+    //Table: images
+    protected static final String TABLE_IMAGES = "Images";
+
+    protected static final String COLUMN_IMAGE_ID = "image_id";
+    protected static final String COLUMN_CREATE_AT = "create_at";
+    protected static final String COLUMN_IN_ALBUM = "in_album";
+    protected static final String COLUMN_IN_POST = "in_post";
+    protected static final String COLUMN_IN_DETAIL = "in_detail";
+    protected static final String COLUMN_IMAGE_NAME = "image_name";
+    protected static final String COLUMN_PATH = "path";
+
+    protected static final String CREATE_TABLE_IMAGES = "CREATE TABLE " + TABLE_IMAGES + "("
+            + COLUMN_IMAGE_ID + " TEXT PRIMARY KEY NOT NULL,"
+            + COLUMN_CREATE_AT + " DATETIME,"
+            + COLUMN_IN_ALBUM + " INTEGER,"
+            + COLUMN_IN_POST + " INTEGER,"
+            + COLUMN_IN_DETAIL+ " INTEGER,"
+            + COLUMN_IMAGE_NAME + " TEXT,"
+            + COLUMN_PATH + " TEXT" + ")";
+
+    //----------------------------------------------------------------------------------------------
+
     //----------------------------------------------------------------------------------------------
     //Table: DetailPlan
 
@@ -76,7 +109,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            db.execSQL(CREATE_TABLE_ACCOUNT);
+            db.execSQL(CREATE_TABLE_IMAGES);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -120,6 +153,19 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         close();
         return cursor;
+    }
+
+    public int getCount(String TABLE){
+        String countQuery = "SELECT  * FROM " + TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+
+        int count = cursor.getCount();
+
+        cursor.close();
+
+        // return count
+        return count;
     }
 
     /**

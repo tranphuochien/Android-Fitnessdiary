@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_album_main_library"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.op.fitnessdiary.GUI.album.Album_main_library">
+
+    <Button
+        android:text="Photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:id="@+id/Album_libraryPhotos"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:onClick="onClickPhotos" />
+
+    <Button
+        android:text="Videos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Album_libraryPhotos"
+        android:layout_toRightOf="@+id/Album_libraryPhotos"
+        android:layout_toEndOf="@+id/Album_libraryPhotos"
+        android:layout_marginLeft="62dp"
+        android:layout_marginStart="62dp"
+        android:id="@+id/Album_libraryVideos"
+        android:onClick="onClickVideos" />
+</RelativeLayout>
