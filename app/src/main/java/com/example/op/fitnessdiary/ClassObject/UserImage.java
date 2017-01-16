@@ -1,4 +1,4 @@
-package com.example.op.fitnessdiary.GUI.album;
+package com.example.op.fitnessdiary.ClassObject;
 
 import java.io.Serializable;
 
