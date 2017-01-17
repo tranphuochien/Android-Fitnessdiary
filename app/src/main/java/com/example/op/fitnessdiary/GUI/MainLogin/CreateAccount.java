@@ -66,11 +66,11 @@ public class CreateAccount extends AppCompatActivity {
                 String query = "SELECT * FROM Account";
                 ArrayList<Account> list = new ArrayList<Account>();
                 list = (ArrayList<Account>) db.getListAccount(query);
-                String buffer = "Nickname: " + list.get(2).getNickname()
-                        + "DOB: " +  list.get(2).getDOB() +
-                        "Email: " +  list.get(2).getEmail();
+                String buffer = "Nickname: " + list.get(0).getNickname()
+                        + "DOB: " +  list.get(0).getDOB() +
+                        "Email: " +  list.get(0).getEmail();
 
-                        Toast.makeText(CreateAccount.this, buffer, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreateAccount.this, buffer, Toast.LENGTH_SHORT).show();
             }
         });
     }

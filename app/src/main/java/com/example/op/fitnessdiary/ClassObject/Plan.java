@@ -1,6 +1,7 @@
 package com.example.op.fitnessdiary.ClassObject;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * Created by OP on 1/1/2017.
@@ -9,21 +10,32 @@ import java.io.Serializable;
 public class Plan implements Serializable {
     String id;
     int numdays;
-    boolean status;
+    int status;
 
+    public Plan(String id, int numdays, int status)
+    {
+        this.id = id;
+        this.numdays = numdays;
+        this.status = status;
+    }
+
+    public Plan(int numdays)
+    {
+        this.id = UUID.randomUUID().toString();
+        this.numdays = numdays;
+    }
     //Method: get
-    String getId() { return this.id;}
+    public String getId() { return this.id;}
 
-    int getNumdays() { return this.numdays;}
+    public int getNumdays() { return this.numdays;}
 
-    boolean getStatus() {return  this.status;}
+    public int getStatus() {return  this.status;}
 
     //Method: set
-    void setId(String id) { this.id = id;}
+    public void setId(String id) { this.id = id;}
 
-    void setNumdays(int numdays) { this.numdays = numdays;}
+    public void setNumdays(int numdays) { this.numdays = numdays;}
 
-    void setStatus (boolean status) { this.status = status;}
-
+    public void setStatus (int status) { this.status = status;}
 
 }

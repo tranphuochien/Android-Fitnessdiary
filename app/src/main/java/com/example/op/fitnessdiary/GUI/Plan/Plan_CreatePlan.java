@@ -1,6 +1,7 @@
 package com.example.op.fitnessdiary.GUI.Plan;
 
 import android.content.Intent;
+import android.media.ExifInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,7 +13,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.op.fitnessdiary.ClassObject.DetailPlan;
+import com.example.op.fitnessdiary.ClassObject.ListExercise.Exercise;
+import com.example.op.fitnessdiary.ClassObject.ListExercise.Jogging;
+import com.example.op.fitnessdiary.ClassObject.Plan;
 import com.example.op.fitnessdiary.GUI.ViewHolderListExercise.ListVHExercise;
+import com.example.op.fitnessdiary.Processor.DetailPlanProcessor;
+import com.example.op.fitnessdiary.Processor.JoggingProcessor;
+import com.example.op.fitnessdiary.Processor.PlanProcessor;
 import com.example.op.fitnessdiary.R;
 
 import java.text.ParseException;
@@ -27,6 +35,7 @@ public class Plan_CreatePlan extends AppCompatActivity {
     private static ListView listView;
     private static ArrayList<DetailDay> list;
     private static CustomListPlanAdapter listPlanAdapter;
+    private ArrayList<Exercise> listPlanDays = new ArrayList<Exercise>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +47,8 @@ public class Plan_CreatePlan extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(Plan_CreatePlan.this, "setPlan clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Plan_CreatePlan.this, "setPlan clicked", Toast.LENGTH_SHORT).show();
+                setPlan();
             }
         });
 
@@ -79,13 +89,44 @@ public class Plan_CreatePlan extends AppCompatActivity {
         });
     }
 
+    private void setPlan() {
+        int numDays = Integer.valueOf(editTextNumDay.getText().toString());
+
+        if (numDays != listPlanDays.size())
+        {
+            Toast.makeText(Plan_CreatePlan.this, "You must complete list plan!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //Write plan to database
+        Plan plan = new Plan(numDays);
+        String idPlan = plan.getId();
+        PlanProcessor pp = PlanProcessor.getInstance();
+        DetailPlanProcessor dtp = DetailPlanProcessor.getInstance();
+        JoggingProcessor jp = JoggingProcessor.getInstance();
+
+        pp.insertPlan(plan, Plan_CreatePlan.this);
+
+        for (int i = 0; i < numDays ; i++)
+        {
+            String datePlan = listPlanDays.get(i).getDatePlan();
+            int idMethod = listPlanDays.get(i).getIdMethod();
+            DetailPlan detailPlan = new DetailPlan(idPlan,datePlan, idMethod, 0);
+            dtp.insertDetailPlan(detailPlan, Plan_CreatePlan.this);
+        }
+
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if(resultCode == RESULT_OK){
-                String stredittext=data.getStringExtra("edittextvalue");
-                Toast.makeText(getBaseContext(),stredittext, Toast.LENGTH_SHORT).show();
+                Exercise exercise = (Exercise)data.getSerializableExtra("resultSetPlan");
+                listPlanDays.add(exercise);
+
+                Toast.makeText(getBaseContext(),exercise.GetName().toString(), Toast.LENGTH_SHORT).show();
             }
         }
     }

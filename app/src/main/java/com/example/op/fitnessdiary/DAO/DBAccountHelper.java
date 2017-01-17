@@ -3,6 +3,8 @@ package com.example.op.fitnessdiary.DAO;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.example.op.fitnessdiary.ClassObject.Account;
 
@@ -17,6 +19,16 @@ public class DBAccountHelper extends DBHelper {
 
     public DBAccountHelper(Context context) {
         super(context);
+    }
+
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        try {
+            db.execSQL(CREATE_TABLE_ACCOUNT);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

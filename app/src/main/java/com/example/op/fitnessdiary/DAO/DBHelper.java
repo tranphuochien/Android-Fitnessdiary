@@ -94,12 +94,23 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //----------------------------------------------------------------------------------------------
     //Table: DetailPlan
+    protected static final String TABLE_DETAILPLAN = "DetailPlan";
 
+    protected static final String COLUMN_DETAILPLAN_ID = "id";
+    protected static final String COLUMN_DETAILPLAN_IDPLAN = "idplan";
+    protected static final String COLUMN_DETAILPLAN_DATEPLAN = "dateplan";
+    protected static final String COLUMN_DETAILPLAN_IDTRAINNINGMETHOD = "idtrainningmethod";
+    protected static final String COLUMN_DETAILPLAN_STATUS= "status";
     //----------------------------------------------------------------------------------------------
 
     //----------------------------------------------------------------------------------------------
-    //Table:
+    //Table: JOGGING
+    protected static final String TABLE_JOGGING = "Jogging";
 
+    protected static final String COLUMN_JOGGING_IDPLAN = "idplan";
+    protected static final String COLUMN_JOGGING_DATEPLAN = "dateplan";
+    protected static final String COLUMN_JOGGING_DURATION = "duration";
+    protected static final String COLUMN_JOGGING_NUMKM = "numkm";
     //----------------------------------------------------------------------------------------------
 
     protected DBHelper(Context context)  {
@@ -109,6 +120,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
+            db.execSQL(CREATE_TABLE_ACCOUNT);
             db.execSQL(CREATE_TABLE_IMAGES);
         } catch (SQLException e) {
             e.printStackTrace();

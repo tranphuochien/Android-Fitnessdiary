@@ -23,25 +23,12 @@
         android:id="@+id/Album_libraryVideos"
         android:onClick="onClickVideos" />
 
-    <Button
-        android:text="Photos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
-        android:id="@+id/Album_libraryPhotos"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp"
-        android:onClick="onClickPhotos"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@mipmap/videos"
-        android:id="@+id/imageView2"
-        android:layout_alignTop="@+id/imageView"
+        android:id="@+id/album_image_videos"
+        android:layout_alignTop="@+id/album_image_photo"
         android:layout_alignLeft="@+id/Album_libraryVideos"
         android:layout_alignStart="@+id/Album_libraryVideos" />
 
@@ -49,9 +36,23 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@mipmap/photos"
-        android:id="@+id/imageView"
+        android:id="@+id/album_image_photo"
         android:layout_above="@+id/Album_libraryVideos"
         android:layout_alignLeft="@+id/Album_libraryPhotos"
         android:layout_alignStart="@+id/Album_libraryPhotos"
-        android:layout_marginBottom="21dp" />
+        android:layout_marginBottom="21dp"
+        android:cropToPadding="false" />
+
+    <Button
+        android:text="Photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Album_libraryPhotos"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:onClick="onClickPhotos"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="170dp" />
 </RelativeLayout>

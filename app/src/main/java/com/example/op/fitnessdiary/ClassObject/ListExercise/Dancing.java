@@ -25,4 +25,9 @@ public class Dancing extends Exercise implements Endurance {
     public Boolean isOkByName(String strTypeName) {
         return NormalizeName(strTypeName) == GetName();
     }
+
+    @Override
+    public int getIdMethod() {
+        return 1;
+    }
 }

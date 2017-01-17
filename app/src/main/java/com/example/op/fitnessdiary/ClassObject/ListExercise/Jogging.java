@@ -13,6 +13,15 @@ public class Jogging extends Exercise implements Endurance {
     {
         avatar = "joging";
     }
+
+    public Jogging(String idPlan, String datePlan, int duration, float nKilometer)
+    {
+        this.idPlan = idPlan;
+        this.datePlan = datePlan;
+        this.duration = duration;
+        this.nKilometer = nKilometer;
+    }
+
     @Override
     public Exercise Clone() {
         Exercise obj = new Jogging();
@@ -27,6 +36,11 @@ public class Jogging extends Exercise implements Endurance {
     @Override
     public Boolean isOkByName(String strTypeName) {
         return NormalizeName(strTypeName) == GetName();
+    }
+
+    @Override
+    public int getIdMethod() {
+        return 6;
     }
 
     public float getnKilometer()

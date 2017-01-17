@@ -28,6 +28,11 @@ public class Lifting extends  Exercise implements Strength {
         return NormalizeName(strTypeName) == GetName();
     }
 
+    @Override
+    public int getIdMethod() {
+        return 3;
+    }
+
     public int getSections() {
         return times;
     }

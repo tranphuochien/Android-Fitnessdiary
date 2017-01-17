@@ -88,6 +88,7 @@ public class Plan_ListExercise extends AppCompatActivity {
                 // code for matching password
                 Exercise exercise = holder.setPlan_getExercise();
 
+
                 String duration = String.valueOf(exercise.getDuration());
                 String name =  exercise.GetName();
 
@@ -97,7 +98,7 @@ public class Plan_ListExercise extends AppCompatActivity {
                 finish();
                 */
                 Intent intent = new Intent();
-                intent.putExtra("edittextvalue","value_here");
+                intent.putExtra("resultSetPlan",exercise);
                 setResult(RESULT_OK, intent);
                 finish();
 

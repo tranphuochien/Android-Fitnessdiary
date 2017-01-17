@@ -19,7 +19,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SignInActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Entry" />
+        <!--<activity android:name=".GUI.MainLogin.MainLogin" />-->
+        <activity android:name=".MainActivity" />
+        <activity android:name=".GUI.MainLogin.MainLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +33,7 @@
         <activity android:name=".GUI.baseStats.baseStats_main" />
         <activity android:name=".GUI.album.Album_main" />
         <activity android:name=".GUI.createEvent.CreateEvent_main" />
-        <activity android:name=".GUI.MainLogin.MainLogin" />
+
         <activity android:name=".GUI.MainLogin.ForgotPassword" />
         <activity android:name=".GUI.MainLogin.CreateAccount" />
         <activity android:name=".GUI.Celebrate.Celebrate_main" />
@@ -41,14 +44,16 @@
         <activity android:name=".GUI.Plan.Plan_listitem_detailday" />
         <activity android:name=".GUI.MainLogin.MainLogin_LoginSuccess" />
         <activity android:name=".GUI.album.Album_main_library" />
-        <activity android:name=".GUI.album.Album_main_videos"></activity>
-        <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyBE9iHeraHT3vzDGPcuayhe3r-FQhUR4Pg" />
+        <activity android:name=".GUI.album.Album_main_videos" />
 
         <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBE9iHeraHT3vzDGPcuayhe3r-FQhUR4Pg" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
     </application>
 
 </manifest>

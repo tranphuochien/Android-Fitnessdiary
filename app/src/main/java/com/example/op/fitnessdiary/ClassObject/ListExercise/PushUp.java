@@ -28,6 +28,11 @@ public class PushUp extends Exercise implements Strength {
         return NormalizeName(strTypeName) == GetName();
     }
 
+    @Override
+    public int getIdMethod() {
+        return 2;
+    }
+
     public int getSections() {
         return sections;
     }
