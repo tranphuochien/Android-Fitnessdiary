@@ -4,11 +4,15 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <meta-data
         android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version" />
-    <application
 
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,7 +39,16 @@
         <activity android:name=".GUI.Plan.Plan_ProcessDetail" />
         <activity android:name=".GUI.Plan.Plan_ListExercise" />
         <activity android:name=".GUI.Plan.Plan_listitem_detailday" />
-        <activity android:name=".GUI.MainLogin.MainLogin_LoginSuccess"></activity>
+        <activity android:name=".GUI.MainLogin.MainLogin_LoginSuccess" />
+        <activity android:name=".GUI.album.Album_main_library" />
+        <activity android:name=".GUI.album.Album_main_videos"></activity>
+        <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBE9iHeraHT3vzDGPcuayhe3r-FQhUR4Pg" />
+
+        <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

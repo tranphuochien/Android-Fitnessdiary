@@ -1,18 +1,17 @@
 package com.example.op.fitnessdiary;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import com.example.op.fitnessdiary.GUI.album.Album_main;
-import com.example.op.fitnessdiary.GUI.baseStats.baseStats_main;
-import com.example.op.fitnessdiary.GUI.createEvent.CreateEvent_main;
-import com.example.op.fitnessdiary.GUI.setting.Account_setting_main_fix;
 
 import com.example.op.fitnessdiary.GUI.Celebrate.Celebrate_main;
 import com.example.op.fitnessdiary.GUI.MainLogin.MainLogin;
 import com.example.op.fitnessdiary.GUI.Plan.Plan_main;
+import com.example.op.fitnessdiary.GUI.album.Album_main_library;
+import com.example.op.fitnessdiary.GUI.baseStats.baseStats_main;
+import com.example.op.fitnessdiary.GUI.createEvent.CreateEvent_main;
+import com.example.op.fitnessdiary.GUI.setting.Account_setting_main_fix;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickAlbum(View v){
-        Intent myIntent = new Intent(this, Album_main.class);
+        Intent myIntent = new Intent(this, Album_main_library.class);
         this.startActivity(myIntent);
     }
 

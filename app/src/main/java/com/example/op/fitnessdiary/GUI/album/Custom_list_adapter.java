@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.op.fitnessdiary.ClassObject.UserImage;
 import com.example.op.fitnessdiary.R;
 
 import java.util.List;
@@ -62,7 +63,7 @@ public class Custom_list_adapter extends BaseAdapter {
         UserImage userImage = this.listData.get(position);
         holder.info.setText(userImage.getImageInfo());
 
-        holder.image.setImageBitmap(BitmapFactory.decodeFile(userImage.getImagePath() + userImage.getImageName()));
+        holder.image.setImageBitmap(BitmapFactory.decodeFile(userImage.getImagePath()));
         return convertView;
     }
 }
