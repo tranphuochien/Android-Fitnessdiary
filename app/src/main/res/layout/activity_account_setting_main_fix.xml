@@ -92,16 +92,6 @@
                 android:layout_alignLeft="@+id/Account_userNameText"
                 android:layout_alignStart="@+id/Account_userNameText" />
 
-            <TextView
-                android:text="Password:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_passwordTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
             <Button
                 android:text="Save"
                 android:layout_height="wrap_content"
@@ -111,17 +101,6 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
-
-            <TextView
-                android:text="Day of Birth:"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:id="@+id/Account_DOBTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_below="@+id/Account_passwordTitle"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="36dp" />
 
             <TextView
                 android:text="User Name:"
@@ -143,6 +122,54 @@
                 android:layout_alignTop="@+id/Account_userNameTitle"
                 android:layout_alignLeft="@+id/Account_image"
                 android:layout_alignStart="@+id/Account_image" />
+
+            <TextView
+                android:text="Day of Birth:"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:id="@+id/Account_DOBTitle"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginBottom="27dp"
+                android:layout_above="@+id/Account_save"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Enter password again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Account_repasswordTitle"
+                android:layout_alignTop="@+id/Account_repasswordText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/Account_passwordTitle"
+                android:layout_alignEnd="@+id/Account_passwordTitle"
+                android:layout_alignBottom="@+id/Account_repasswordText"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+            <TextView
+                android:text="Password:"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:id="@+id/Account_passwordTitle"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_below="@+id/Account_userNameTitle"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="23dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/Account_repasswordText"
+                android:layout_below="@+id/Account_passwordTitle"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="21dp"
+                android:layout_alignLeft="@+id/Account_DOBText"
+                android:layout_alignStart="@+id/Account_DOBText" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

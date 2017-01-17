@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -71,6 +72,22 @@ public class MainLogin extends AppCompatActivity implements GoogleApiClient.OnCo
                 signIn();
             }
         });
+
+
+
+        //----------Sign out button---------------
+        Button signout = (Button) this.findViewById(R.id.button_test_quit);
+
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
+        //--------------------------------------
+
+
+
 
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override

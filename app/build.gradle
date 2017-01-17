@@ -20,6 +20,12 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.code.findbugs:jsr305:1.3.9', 'com.google.code.findbugs:jsr305:2.0.1'
+    }
+}
+
 dependencies {
     //backup : old gradle - before add drive api - update sdk to v25
     /*
@@ -45,6 +51,12 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:10.0.1'
     //------------------
 
+    //Android testcase
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //Google drive API
     compile 'pub.devrel:easypermissions:0.2.1'
     compile('com.google.api-client:google-api-client-android:1.22.0') {
         exclude group: 'org.apache.httpcomponents'
@@ -52,11 +64,12 @@ dependencies {
     compile('com.google.apis:google-api-services-drive:v3-rev52-1.22.0') {
         exclude group: 'org.apache.httpcomponents'
     }
+    //----------------
 
     //----chart module
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
     testCompile 'junit:junit:4.12'
-    //----
+    //----------------
 
 }
 //BE CAREFULL: GMS shoud put at the end of file
