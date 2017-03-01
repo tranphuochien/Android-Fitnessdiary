@@ -1,5 +1,8 @@
 # fitnessdiary
-Đồ án cuối kì môn Phân tích thiết kế phần mềm
-abc
-dec 27, 11:21
+Final project Software Analysis and Design
+Contributor:
+  + Trần Phước Hiền
+  + Lê Đình Hân
+
+
 
